@@ -95,7 +95,7 @@ class PiProem(HasMapping, HasMeasureTrigger):
                     if e.code == self.PicamEnums.Error.TimeOutOccurred:
                         i += 1
                         await asyncio.sleep(0)
-                        if i > 100 and not (i % 100):
+                        if i > 10 and not (i % 10):
                             # ...however, if timeouts are excessive, the acquisition broke somehow
                             dt = time.time() - start
                             self.logger.info(
